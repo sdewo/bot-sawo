@@ -3,4 +3,8 @@ const config = require("./config.json");
 
 const client = new Discord.Client();
 
-client.login(config.BOT_TOKEN);
+client.on("ready", () => {
+    console.log("I am ready!");
+});
+
+client.login(process.env.BOT_TOKEN);
